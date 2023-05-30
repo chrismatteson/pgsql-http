@@ -1093,7 +1093,7 @@ Datum http_request(PG_FUNCTION_ARGS)
 	/* Restrict to just http/https. Leaving unrestricted */
 	/* opens possibility of users requesting file:/// urls */
 	/* locally */
-	CURL_SETOPT(g_http_handle, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
+	CURL_SETOPT(g_http_handle, CURLOPT_PROTOCOLS_STR, CURLPROTO_HTTP | CURLPROTO_HTTPS);
 
 	if ( g_use_keepalive )
 	{
